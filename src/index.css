@@ -1,28 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
-html,
-body,
-#root,
+
+body {
+  margin: 0;
+}
+
 .app {
   width: 100%;
-  height: 100%;
-
+  height: 100vh;
+  display: flex;
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
-
-/* .app {
-  display: flex;
-  position: relative;
-} */
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+ 
+.content {
+  width: 100%;
 }
 
 h1 {

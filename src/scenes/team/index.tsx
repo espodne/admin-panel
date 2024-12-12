@@ -5,3 +5,4 @@ export default function Team() {
     <div>Team</div>
   )
 }
+

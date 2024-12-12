@@ -11,7 +11,9 @@
     "allowSyntheticDefaultImports": true, // Позволяет использовать default импорты
     "resolveJsonModule": true, // Позволяет импортировать JSON файлы
     "isolatedModules": true, // Обеспечивает совместимость с Babel
-    "noEmit": true // Не генерирует выходные файлы (используется для проверки типов)
+    "noEmit": true, // Не генерирует выходные файлы (используется для проверки типов)
+    "allowImportingTsExtensions": true
+
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"], // Включаем все файлы .ts и .tsx в папке src
   "exclude": ["node_modules", "dist"] // Исключаем папки node_modules и dist
