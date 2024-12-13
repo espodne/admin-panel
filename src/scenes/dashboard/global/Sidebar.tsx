@@ -55,10 +55,14 @@ const SidebarLocal = () => {
 
   return (
     <Box>
-      <Sidebar collapsed={isCollapsed}>
+      <Sidebar
+        collapsed={isCollapsed}
+        style={{
+          border: "none",
+        }}
+      >
         <Menu
           style={{
-            height: "100vh",
             background: colors.primary[400],
           }}
         >
