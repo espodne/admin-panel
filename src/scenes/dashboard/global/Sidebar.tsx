@@ -96,9 +96,9 @@ const SidebarLocal = () => {
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
-                  width="80px"
-                  height="80px"
-                  src="../../../../public/vite.svg"
+                  width="60px"
+                  height="60px"
+                  src="/icon.jpg"
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -109,7 +109,7 @@ const SidebarLocal = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  name
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
                   VP Fancy Admin

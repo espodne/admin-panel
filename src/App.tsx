@@ -16,7 +16,7 @@ import Pie from "./scenes/pie";
 import Line from "./scenes/line";
 import Geography from "./scenes/geography";
 import SidebarLocal from "./scenes/dashboard/global/Sidebar";
-import Calendar from "./scenes/dashboard/calendar";
+import Calendar from "./scenes/calendar";
 
 const Layout = () => {
   const [theme, colorMode] = useMode();
