@@ -15,7 +15,6 @@ import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import { tokens } from "../../../styles/theme";
-
 interface ItemProps {
   title: string;
   to: string;
@@ -59,11 +58,13 @@ const SidebarLocal = () => {
         collapsed={isCollapsed}
         style={{
           border: "none",
+          height: "100%",
         }}
       >
         <Menu
           style={{
-            background: colors.primary[400],
+            backgroundColor: colors.blueAccent[800],
+            height: "100%"
           }}
         >
           {/* LOGO AND MENU ICON */}
@@ -92,7 +93,7 @@ const SidebarLocal = () => {
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px">
+            <Box mb="10px">
               <Box display="flex" justifyContent="center" alignItems="center">
                 <img
                   alt="profile-user"
@@ -117,7 +118,7 @@ const SidebarLocal = () => {
               </Box>
             </Box>
           )}
-
+          
           <Box>
             <Item
               title="Dashboard"

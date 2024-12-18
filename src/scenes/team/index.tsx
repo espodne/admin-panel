@@ -15,6 +15,7 @@ const Team = () => {
     {
       field: "id",
       headerName: "ID",
+      flex: 0.2
     },
     {
       field: "name",
@@ -28,6 +29,7 @@ const Team = () => {
       type: "number",
       headerAlign: "left",
       align: "left",
+      flex: 0.5
     },
     {
       field: "phone",
@@ -47,7 +49,7 @@ const Team = () => {
         return (
           <Box
             width="60%"
-            m="0 auto"
+            m="10px auto"
             p="5px"
             display="flex"
             justifyContent="center"
@@ -56,8 +58,8 @@ const Team = () => {
                 access === "admin"
                   ? colors.greenAccent[600]
                   : access === "manager"
-                  ? colors.greenAccent[700]
-                  : colors.greenAccent[700]
+                  ? colors.greenAccent[600]
+                  : colors.greenAccent[800]
               }`,
               borderRadius: "4px",
             }}
@@ -79,12 +81,25 @@ const Team = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="TEAM" subtitle="Managing the Team Members" />
       </Box>
-      <DataGrid
-        rows={mockDataTeam}
-        columns={columns}
-        checkboxSelection
-        
-      />
+      <Box m="15px 0 0 0" height="68vh" sx={{
+        "& .MuiDataGrid-root": {
+          border: "none"
+        },
+        "& .MuiDataGrid-cell": {
+          border: "none",
+        },
+        "& .name-column--cell": {
+          color: colors.greenAccent[300],
+        },
+        "& .MuiDataGrid-columnHeader": {
+          backgroundColor: colors.blueAccent[800],
+        },
+        "& .MuiTablePagination-root": {
+          backgroundColor: colors.blueAccent[800],
+        }
+      }}>
+        <DataGrid rows={mockDataTeam} columns={columns} />
+      </Box>
     </Box>
   );
 };
