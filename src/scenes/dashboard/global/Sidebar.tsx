@@ -59,6 +59,7 @@ const SidebarLocal = () => {
         style={{
           border: "none",
           height: "100%",
+          width: "80px"
         }}
       >
         <Menu
@@ -113,7 +114,7 @@ const SidebarLocal = () => {
                   name
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                  Admin
                 </Typography>
               </Box>
             </Box>

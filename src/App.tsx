@@ -1,22 +1,21 @@
+import React, { Suspense } from "react";
 import { ColorModeContext, useMode } from "./styles/theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Topbar from "./scenes/dashboard/global/Topbar";
-
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-
-import Dashboard from "./scenes/dashboard";
-import Team from "./scenes/team";
-import Contacts from "./scenes/contacts";
-import Invoices from "./scenes/invoices";
-import Form from "./scenes/form";
-
-import FAQ from "./scenes/faq";
-import Bar from "./scenes/bar";
-import Pie from "./scenes/pie";
-import Line from "./scenes/line";
-import Geography from "./scenes/geography";
 import SidebarLocal from "./scenes/dashboard/global/Sidebar";
-import Calendar from "./scenes/calendar";
+
+const Dashboard = React.lazy(() => import("./scenes/dashboard"));
+const Team = React.lazy(() => import("./scenes/team"));
+const Contacts = React.lazy(() => import("./scenes/contacts"));
+const Invoices = React.lazy(() => import("./scenes/invoices"));
+const Form = React.lazy(() => import("./scenes/form"));
+const FAQ = React.lazy(() => import("./scenes/faq"));
+const Bar = React.lazy(() => import("./scenes/bar"));
+const Pie = React.lazy(() => import("./scenes/pie"));
+const Line = React.lazy(() => import("./scenes/line"));
+const Geography = React.lazy(() => import("./scenes/geography"));
+const Calendar = React.lazy(() => import("./scenes/calendar"));
 
 const Layout = () => {
   const [theme, colorMode] = useMode();
@@ -25,10 +24,12 @@ const Layout = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <SidebarLocal />
+        <SidebarLocal />
           <main className="content">
             <Topbar />
-            <Outlet />
+            <Suspense fallback={<div>Загрузка...</div>}>
+              <Outlet />
+            </Suspense>
           </main>
         </div>
       </ThemeProvider>
