@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridColDef, GridToolbar} from "@mui/x-data-grid";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/Header";
@@ -54,37 +54,7 @@ const Contacts = () => {
       headerName: "ZipCode",
       flex: 0.5,
     },
-    {
-      field: "access",
-      headerName: "Access Level",
-      flex: 1,
-      renderCell: ({ row: { access } }) => {
-        return (
-          <Box
-            width="60%"
-            m="10px auto"
-            p="5px"
-            display="flex"
-            justifyContent="center"
-            sx={{
-              backgroundColor: `${
-                access === "admin"
-                  ? colors.greenAccent[600]
-                  : access === "manager"
-                  ? colors.greenAccent[600]
-                  : colors.greenAccent[800]
-              }`,
-              borderRadius: "4px",
-            }}
-          >
-           
-            <Typography color={colors.grey[100]} ml="5px">
-              {access}
-            </Typography>
-          </Box>
-        );
-      },
-    },
+    
   ];
 
   return (
