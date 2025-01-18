@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  colors,
   IconButton,
   Typography,
   useTheme,
@@ -9,7 +8,7 @@ import {
 import { tokens } from "../../styles/theme";
 import Header from "../../components/Header";
 import { mockTransactions } from "../../data/mockData";
-import DownloadOutlined from "@mui/icons-material/DownloadOutlined";
+import DownloadOutlined from "@mui/icons-material/DownloadOutlined"
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
@@ -146,6 +145,14 @@ const Dashboard = () => {
               <Typography variant="h3" fontWeight="500" color={colors.greenAccent[500]}>
                 $59,342,32
               </Typography>
+            </Box>
+
+            <Box>
+              <IconButton>
+                <DownloadOutlined  sx={{
+                  fontSize: "26px", color: colors.greenAccent[500]
+                }}/>
+              </IconButton>
             </Box>
           </Box>
         </Box>
