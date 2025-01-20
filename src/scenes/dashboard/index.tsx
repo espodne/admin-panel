@@ -1,14 +1,8 @@
-import {
-  Box,
-  Button,
-  IconButton,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../styles/theme";
 import Header from "../../components/Header";
 import { mockTransactions } from "../../data/mockData";
-import DownloadOutlined from "@mui/icons-material/DownloadOutlined"
+import DownloadOutlined from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
@@ -54,7 +48,7 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          sx={{ backgroundColor: colors.primary[400] }}
+          sx={{ backgroundColor: colors.primary[600] }}
         >
           <StatBox
             title="12,361"
@@ -73,7 +67,7 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          sx={{ backgroundColor: colors.primary[400] }}
+          sx={{ backgroundColor: colors.primary[600] }}
         >
           <StatBox
             title="431,225"
@@ -92,7 +86,7 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          sx={{ backgroundColor: colors.primary[400] }}
+          sx={{ backgroundColor: colors.primary[600] }}
         >
           <StatBox
             title="32,441"
@@ -111,7 +105,7 @@ const Dashboard = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          sx={{ backgroundColor: colors.primary[400] }}
+          sx={{ backgroundColor: colors.primary[600] }}
         >
           <StatBox
             title="1,325,134"
@@ -129,7 +123,7 @@ const Dashboard = () => {
         <Box
           gridColumn="span 8"
           gridRow="span 2"
-          sx={{ backgroundColor: colors.primary[400] }}
+          sx={{ backgroundColor: colors.primary[600] }}
         >
           <Box
             mt="25px"
@@ -139,21 +133,92 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Box>
-              <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
+              <Typography
+                variant="h5"
+                fontWeight="600"
+                color={colors.grey[100]}
+              >
                 Revenue Genereted
               </Typography>
-              <Typography variant="h3" fontWeight="500" color={colors.greenAccent[500]}>
+              <Typography
+                variant="h3"
+                fontWeight="500"
+                color={colors.greenAccent[500]}
+              >
                 $59,342,32
               </Typography>
             </Box>
 
             <Box>
               <IconButton>
-                <DownloadOutlined  sx={{
-                  fontSize: "26px", color: colors.greenAccent[500]
-                }}/>
+                <DownloadOutlined
+                  sx={{
+                    fontSize: "26px",
+                    color: colors.greenAccent[500],
+                  }}
+                />
               </IconButton>
             </Box>
+          </Box>
+
+          <Box height="230px">
+            <LineChart isDashboard={true} />
+          </Box>
+
+          <Box
+            gridAutoColumns="span 4"
+            gridRow="span 2"
+            sx={{ backgroundColor: colors.primary[600] }}
+            overflow="auto"
+          >
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              alignItems="center"
+              borderBottom={`4px solid ${colors.primary[500]}`}
+              color={colors.grey[100]}
+              p="15px"
+            >
+              <Typography
+                color={colors.grey[100]}
+                variant="h5"
+                fontWeight="600"
+              >
+                Recant Transactions
+              </Typography>
+            </Box>
+            {mockTransactions.map((transaction, i) => (
+              <Box
+                key={`${transaction.txId}-${i}`}
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                borderBottom={`4px solid ${colors.primary[500]}`}
+              >
+                <Box>
+                  <Typography
+                    color={colors.greenAccent[500]}
+                    variant="h5"
+                    fontWeight="600"
+                  >
+                    {transaction.txId}
+                  </Typography>
+                  <Typography color={colors.grey[100]}>
+                    {transaction.user}
+                  </Typography>
+                </Box>
+                <Box color={colors.grey[100]}>{transaction.date}</Box>
+                <Box
+                  sx={{ backgroundColor: colors.greenAccent[500] }}
+                  p="5px 15px"
+                  width="100px"
+                  textAlign="center"
+                  borderRadius="4px"
+                >
+                  ${transaction.cost}
+                </Box>
+              </Box>
+            ))}
           </Box>
         </Box>
       </Box>
